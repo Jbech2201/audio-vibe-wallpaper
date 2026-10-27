@@ -1,0 +1,10 @@
+{
+  "uuid": "audio-vibe-wallpaper@jbech",
+  "name": "Audio Vibe Wallpaper",
+  "description": "Menjadikan visualisasi Audio Vibe (Spotify + lirik) sebagai wallpaper hidup GNOME di Wayland.",
+  "shell-version": ["50"],
+  "settings-schema": "org.gnome.shell.extensions.audio-vibe-wallpaper",
+  "gettext-domain": "audio-vibe-wallpaper",
+  "session-modes": ["user"],
+  "version": 1
+}

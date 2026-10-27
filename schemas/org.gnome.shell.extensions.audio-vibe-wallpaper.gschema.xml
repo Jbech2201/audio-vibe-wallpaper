@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <enum id="org.gnome.shell.extensions.audio-vibe-wallpaper.mode">
+    <value nick="fire" value="0"/>
+    <value nick="ice" value="1"/>
+    <value nick="sakura" value="2"/>
+    <value nick="sunset" value="3"/>
+    <value nick="day" value="4"/>
+    <value nick="night" value="5"/>
+  </enum>
+  <schema id="org.gnome.shell.extensions.audio-vibe-wallpaper"
+          path="/org/gnome/shell/extensions/audio-vibe-wallpaper/">
+    <key name="project-path" type="s">
+      <default>'/home/jbech/audio-visual'</default>
+      <summary>Folder proyek Audio Vibe</summary>
+      <description>Folder yang berisi server.py dan index.html.</description>
+    </key>
+    <key name="port" type="i">
+      <range min="1024" max="65535"/>
+      <default>8765</default>
+      <summary>Port server lokal</summary>
+    </key>
+    <key name="mode" enum="org.gnome.shell.extensions.audio-vibe-wallpaper.mode">
+      <default>'night'</default>
+      <summary>Mode visual aktif</summary>
+    </key>
+    <key name="auto-mode-by-time" type="b">
+      <default>false</default>
+      <summary>Ganti mode otomatis mengikuti jam</summary>
+      <description>Siang untuk 06.00-15.00, senja 15.00-18.00, malam 18.00-06.00.</description>
+    </key>
+    <key name="show-lyrics" type="b">
+      <default>true</default>
+      <summary>Tampilkan lirik di wallpaper</summary>
+    </key>
+    <key name="lyric-view" type="s">
+      <default>'original'</default>
+      <summary>Bahasa lirik yang ditampilkan</summary>
+      <description>original, romaji, lang:en, atau lang:id. Kalau lagu yang sedang diputar tidak punya versi itu, halaman tetap memakai Original.</description>
+    </key>
+    <key name="lyric-offset" type="d">
+      <range min="-15.0" max="15.0"/>
+      <default>0.0</default>
+      <summary>Koreksi sinkronisasi lirik dalam detik</summary>
+    </key>
+    <key name="show-track" type="b">
+      <default>true</default>
+      <summary>Tampilkan judul lagu dan cover di wallpaper</summary>
+    </key>
+    <key name="manage-server" type="b">
+      <default>true</default>
+      <summary>Jalankan server.py otomatis</summary>
+      <description>Kalau port sudah dipakai server lain, proses ini berhenti sendiri dan yang lama tetap dipakai.</description>
+    </key>
+    <key name="pause-on-fullscreen" type="b">
+      <default>true</default>
+      <summary>Hentikan animasi saat ada window fullscreen</summary>
+    </key>
+    <key name="show-indicator" type="b">
+      <default>true</default>
+      <summary>Tampilkan ikon di panel atas</summary>
+    </key>
+  </schema>
+</schemalist>
